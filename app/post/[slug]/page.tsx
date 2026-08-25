@@ -1,4 +1,4 @@
-import { findPostBySlugCached } from "@/lib/post/queries"
+import { findPostBySlugCached } from "@/lib/post/queries/public"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
