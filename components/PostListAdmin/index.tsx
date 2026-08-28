@@ -1,3 +1,4 @@
+import { deletePostAction } from "@/actions/post/delete-post.action"
 import { findPostByIdAdminPrivate } from "@/lib/post/queries/admin"
 import clsx from "clsx"
 import { Trash2Icon } from "lucide-react"
@@ -15,7 +16,7 @@ export default async function PostListAdmin(){
                     !post.published && 'bg-slate-300', 
                     'flex gap-2 items-center justify-between'
                     )} key={post.id}>
-                        
+
                     <Link href={`/admin/post/${post.id}`}>{post.title}</Link>
 
                     {!post.published && (
@@ -24,10 +25,11 @@ export default async function PostListAdmin(){
                          italic'>
                         Não publicado</span>
                     )}
-
-                    <button>
-                        <Trash2Icon size={18} />
-                    </button>
+                    <form action={deletePostAction}>
+                        <input type='hidden' name='id' defaultValue={post.id} />
+                        
+                    </form>
+                    
                 </div>
             })}
         </>
