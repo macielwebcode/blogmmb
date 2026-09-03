@@ -3,6 +3,7 @@ import { findPostByIdAdminPrivate } from "@/lib/post/queries/admin"
 import clsx from "clsx"
 import { Trash2Icon } from "lucide-react"
 import Link from "next/link"
+import AdminBtnDelete from "../Admin/AdminBtnDelete"
 
 
 export default async function PostListAdmin(){
@@ -27,7 +28,7 @@ export default async function PostListAdmin(){
                     )}
                     <form action={deletePostAction}>
                         <input type='hidden' name='id' defaultValue={post.id} />
-                        
+                        <AdminBtnDelete id={post.id} title={post.title} />
                     </form>
                     
                 </div>
