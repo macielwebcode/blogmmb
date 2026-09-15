@@ -26,10 +26,9 @@ export default async function PostListAdmin(){
                          italic'>
                         Não publicado</span>
                     )}
-                    <form action={deletePostAction}>
-                        <input type='hidden' name='id' defaultValue={post.id} />
-                        <AdminBtnDelete id={post.id} title={post.title} />
-                    </form>
+                    
+                    <AdminBtnDelete id={post.id} title={post.title} />
+                    
                     
                 </div>
             })}
