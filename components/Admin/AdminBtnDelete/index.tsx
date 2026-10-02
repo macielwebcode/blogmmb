@@ -24,7 +24,10 @@ export default function AdminBtnDelete({id, title}: DeletePostBtnProps){
     function handleConfirm(){
          startTransiction(async () => {
             const result = await deletePostAction(id)
-            alert(`o result é: ${result}`)
+             setShowDialog(false)
+            if(result.error){
+                alert(`Erro: ${result.error}`)
+            }
         })
     }
     return(

@@ -10,9 +10,10 @@ type DialogProps = {
     content: React.ReactNode
     onConfirm: () => void
     onCancel: () => void
+    disable: boolean
 }
 
-export default  function Dialog({isVisible = false, title, content, onCancel, onConfirm}: DialogProps){
+export default  function Dialog({isVisible = false, title, content, onCancel, onConfirm, disable = false}: DialogProps){
     if (!isVisible) return null
     return(
         <div className={clsx(
@@ -43,6 +44,7 @@ export default  function Dialog({isVisible = false, title, content, onCancel, on
                     )}
                     autoFocus
                     onClick={onCancel}
+                    disabled={disable}
                     >
                         Cancelar
                     </button>
@@ -54,6 +56,7 @@ export default  function Dialog({isVisible = false, title, content, onCancel, on
                             'py-2 px-4 rounded-lg cursor-pointer'
                         )}
                         onClick={onConfirm}
+                        disabled={disable}
                     >
                         Ok
 

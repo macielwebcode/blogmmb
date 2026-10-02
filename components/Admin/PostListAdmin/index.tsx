@@ -3,7 +3,7 @@ import { findPostByIdAdminPrivate } from "@/lib/post/queries/admin"
 import clsx from "clsx"
 import { Trash2Icon } from "lucide-react"
 import Link from "next/link"
-import AdminBtnDelete from "../Admin/AdminBtnDelete"
+import AdminBtnDelete from "../AdminBtnDelete"
 
 
 export default async function PostListAdmin(){
